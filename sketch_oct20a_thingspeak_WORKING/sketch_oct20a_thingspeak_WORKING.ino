@@ -1,6 +1,7 @@
 #include <DHT.h>
 #include <Wire.h>
 #include <UnoWiFiDevEd.h>
+#include <LiquidCrystal.h>
 
 //thingspeak get request nd api key
 //GET https://api.thingspeak.com/update?api_key=KHYRCV4OZ5IC1CWO&field1=0
@@ -9,7 +10,7 @@
 #define SERVER_ADDR   "api.thingspeak.com"
 #define APIKEY_THINGSPEAK  "KHYRCV4OZ5IC1CWO" //Insert API Key
 #define DHTPIN 4
-#define DHTTYPE DHT22 //define DHT sensor used 
+#define DHTTYPE DHT22 //define DHT sensor used
 
 
 /*
@@ -26,6 +27,7 @@ DHT dht(DHTPIN, DHTTYPE); //set the DHT sensor (pin its connectd to, Sensor type
 void setup() {
   Ciao.begin();           //Begin ciao communication
   Serial.begin(9600);     //int serial (baud rate)
+  lcd.begin(16, 2);       //set up lcd
 
 }
 
@@ -50,6 +52,8 @@ void loop() {
   Serial.println("RH:");
   Serial.print(dht.readHumidity());
   Serial.print("%");
+  lcd.setCursor(0, 1);
+  lcd.print(dht.readTemperature);
 
 // ciao library functions fro sending ReST command to thingspeak server
   Ciao.println("Sending data on ThingSpeak Channel");
