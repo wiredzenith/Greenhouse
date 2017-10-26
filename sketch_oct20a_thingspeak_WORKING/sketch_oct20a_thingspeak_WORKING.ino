@@ -8,14 +8,15 @@
 #define CONNECTOR     "rest"
 #define SERVER_ADDR   "api.thingspeak.com"
 #define APIKEY_THINGSPEAK  "KHYRCV4OZ5IC1CWO" //Insert API Key
-#define DHTPIN 4   
-#define DHTTYPE DHT22
+#define DHTPIN 4
+#define DHTTYPE DHT22 //define DHT sensor used 
+
 
 /*
- * Arduino scetch to send data from a DHT22 temperature and humidity sensor to 
+ * Arduino scetch to send data from a DHT22 temperature and humidity sensor to
  * thingspeak.com, where the values can be stored and graphed. Useing code gathered from
  * various sites and exaples.
- * 
+ *
  * Tomasz Klebek
  * 20/10/17
  */
@@ -25,7 +26,7 @@ DHT dht(DHTPIN, DHTTYPE); //set the DHT sensor (pin its connectd to, Sensor type
 void setup() {
   Ciao.begin();           //Begin ciao communication
   Serial.begin(9600);     //int serial (baud rate)
-  
+
 }
 
 void loop() {
@@ -33,7 +34,7 @@ void loop() {
 
   String uri = "/update?api_key="; //tells thing speak to update my channel
   uri += APIKEY_THINGSPEAK;        // Adds API to URL
-  uri += "&field1=";               // sorts info into correct field in thing speak 
+  uri += "&field1=";               // sorts info into correct field in thing speak
   uri += String(dht.readHumidity());  //gets humidity reading from DHT sensor
   uri += "&field2=";
   uri += String(dht.readTemperature());
@@ -49,8 +50,8 @@ void loop() {
   Serial.println("RH:");
   Serial.print(dht.readHumidity());
   Serial.print("%");
-  
-// ciao library functions fro sending ReST command to thingspeak server 
+
+// ciao library functions fro sending ReST command to thingspeak server
   Ciao.println("Sending data on ThingSpeak Channel");
   CiaoData data = Ciao.write(CONNECTOR, SERVER_ADDR, uri);
   delay(2000);    // wait a few sevond to give the server a chance to return helthy responce
