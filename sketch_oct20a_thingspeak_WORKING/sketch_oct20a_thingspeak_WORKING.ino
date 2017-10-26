@@ -3,13 +3,16 @@
 #include <UnoWiFiDevEd.h>
 #include <LiquidCrystal.h>
 
+const int rs = 12, en = 11, d4 = 5, d5 = 4, d6 = 3, d7 = 2;
+LiquidCrystal lcd(rs, en, d4, d5, d6, d7);
+
 //thingspeak get request nd api key
 //GET https://api.thingspeak.com/update?api_key=KHYRCV4OZ5IC1CWO&field1=0
 
 #define CONNECTOR     "rest"
 #define SERVER_ADDR   "api.thingspeak.com"
 #define APIKEY_THINGSPEAK  "KHYRCV4OZ5IC1CWO" //Insert API Key
-#define DHTPIN 4
+#define DHTPIN 7
 #define DHTTYPE DHT22 //define DHT sensor used
 
 
@@ -26,13 +29,15 @@ DHT dht(DHTPIN, DHTTYPE); //set the DHT sensor (pin its connectd to, Sensor type
 
 void setup() {
   Ciao.begin();           //Begin ciao communication
-  Serial.begin(9600);     //int serial (baud rate)
+  dht.begin();
+  //Serial.begin(9600);     //int serial (baud rate)
   lcd.begin(16, 2);       //set up lcd
+  lcd.print("Yo World");
 
 }
 
 void loop() {
-  dht.begin();
+
 
   String uri = "/update?api_key="; //tells thing speak to update my channel
   uri += APIKEY_THINGSPEAK;        // Adds API to URL
@@ -46,14 +51,14 @@ void loop() {
 //  uri += String(analogRead(A1));
 
 // prints out results from DHT sensor to make sure everthing is working fine
-  Serial.print("temp:");
-  Serial.print(dht.readTemperature());
-  Serial.print("*c");
-  Serial.println("RH:");
-  Serial.print(dht.readHumidity());
-  Serial.print("%");
+  // Serial.print("temp:");
+  // Serial.print(dht.readTemperature());
+  // Serial.print("*c");
+  // Serial.println("RH:");
+  // Serial.print(dht.readHumidity());
+  // Serial.print("%");
   lcd.setCursor(0, 1);
-  lcd.print(dht.readTemperature);
+  lcd.print(dht.readHumidity());
 
 // ciao library functions fro sending ReST command to thingspeak server
   Ciao.println("Sending data on ThingSpeak Channel");
@@ -64,12 +69,12 @@ void loop() {
   {
     Ciao.println( "State: " + String (data.get(1)) );
     Ciao.println( "Response: " + String (data.get(2)) );
-    Serial.println( "State: " + String (data.get(1)) );
-    Serial.println( "Response: " + String (data.get(2)) );
+    // Serial.println( "State: " + String (data.get(1)) );
+    // Serial.println( "Response: " + String (data.get(2)) );
   }
   else{    //if ther is no response from the server print "write error"
     Ciao.println("Write Error");
-    Serial.println("Write Error");
+    //Serial.println("Write Error");
   }
   delay(600000);
 }
