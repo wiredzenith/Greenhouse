@@ -2,7 +2,8 @@
 #include <Wire.h>
 #include <UnoWiFiDevEd.h>
 
-//thingspeak get request nd api key
+
+//thingspeak get request and api key
 //GET https://api.thingspeak.com/update?api_key=KHYRCV4OZ5IC1CWO&field1=0
 
 #define CONNECTOR     "rest"
@@ -17,21 +18,41 @@
  * various sites and exaples.
  *
  * Tomasz Klebek
- * 20/10/17
+ * 20/10/31
  */
 
 DHT dht(DHTPIN, DHTTYPE); //set the DHT sensor (pin its connectd to, Sensor type)
+
+unsigned long previousMillis = 0;
 
 void setup() {
   Ciao.begin();           //Begin ciao communication
   Serial.begin(9600);     //int serial (baud rate)
   dht.begin();
+  thingSpeakData
 
 }
 
-void loop() {
+void loop()
+{
+  Serial.print("\ntemp:");
+  Serial.print(dht.readTemperature());
+  Serial.print("*c");
+  Serial.print("\nRH:");
+  Serial.print(dht.readHumidity());
+  Serial.print("%");
+  delay(2000);
+  const long ThingSpeakInterval = 20000;
+  unsigned long currentMillis = millis();
+  if (currentMillis - previousMillis >= ThingSpeakInterval)
+  {
+    previousMillis = currentMillis;
+    thingSpeakData();
+  }
+}
 
-
+void thingSpeakData()
+{
   String uri = "/update?api_key="; //tells thing speak to update my channel
   uri += APIKEY_THINGSPEAK;        // Adds API to URL
   uri += "&field1=";               // sorts info into correct field in thing speak
@@ -67,5 +88,4 @@ void loop() {
     Ciao.println("Write Error");
     Serial.println("Write Error");
   }
-  delay(600000);
 }
