@@ -16,7 +16,7 @@
 
 
 /******************************************************************
-
+  get readding from i2c temp, humidity and light sensors 
 
   Tomasz Klebek
   01/11/17
