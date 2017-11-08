@@ -16,7 +16,7 @@
 
 
 /******************************************************************
-  get readding from i2c temp, humidity and light sensors 
+  get readding from i2c temp, humidity and light sensors
 
   Tomasz Klebek
   01/11/17
@@ -31,7 +31,7 @@ unsigned long previousMillis = 0;
 void setup()
 {
   Serial.begin(9600);      //int serial (baud rate)
-  //Ciao.begin();           //Begin ciao communication
+  Ciao.begin();           //Begin ciao communication
   configureSensor();
 
   if(!tsl.begin())
@@ -65,7 +65,7 @@ void loop()
   {
     Serial.println("\tNo reading");
   }
-  /*
+
   const long ThingSpeakInterval = 20000;
   unsigned long currentMillis = millis();
   if (currentMillis - previousMillis >= ThingSpeakInterval)
@@ -73,7 +73,7 @@ void loop()
     previousMillis = currentMillis;
     thingSpeakData();
   }
-  */
+
 }
 
 // Function for sending data to thing speak
@@ -89,7 +89,7 @@ void thingSpeakData()
   uri += "&field2=";
   uri += String(htu.readTemperature());   //gets air temperature
   uri += "&field3=";
-  uri += String(event.light);          //light intensity
+  uri += String(event.light);             //light intensity
   // uri += "&field4=";
   // uri += String(SOIL TEMP);            //Soil temperature
   // uri += "&field5=";
@@ -99,9 +99,11 @@ void thingSpeakData()
 
 
     // ciao library functions for sending ReST command to thingspeak server
-  Ciao.println("Sending data on ThingSpeak Channel");
+  Ciao.println("Sending data to ThingSpeak Channel");
+  Serial.println("Sending data to ThingSpeak Channel");
   CiaoData data = Ciao.write(CONNECTOR, SERVER_ADDR, uri);
   delay(2000);    // wait a few sevond to give the server a chance to return helthy responce
+
 
   if (!data.isEmpty())  //if there is a response from the server, retreve it
   {
@@ -110,7 +112,8 @@ void thingSpeakData()
     Serial.println( "State: " + String (data.get(1)) );
     Serial.println( "Response: " + String (data.get(2)) );
   }
-  else{    //if ther is no response from the server print "write error"
+  else
+  {    //if ther is no response from the server print "write error"
     Ciao.println("Write Error");
     Serial.println("Write Error");
   }
@@ -130,6 +133,7 @@ void sensorDetails(void)
   Serial.println("------------------------------------");
   Serial.println("");
   delay(500);
+
 }
 
 void configureSensor(void)
