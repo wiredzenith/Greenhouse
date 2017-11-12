@@ -12,25 +12,25 @@
     <div class="menubar">
       <ul class="menu">
         <li class="menu-icon">
-          <a href="index.html">
+          <a href="index.php">
             <img src="img/greenhouse.png" alt="greenhouse" title="Home">
             <p>Home</p>
           </a>
         </li>
         <li class="menu-icon">
-          <a href="temp.html">
+          <a href="temp.php">
             <img src="img/rain.png" alt="rain cloud" title="Temp">
             <p>Temp</p>
           </a>
         </li>
         <li class="menu-icon">
-          <a href="history.html">
+          <a href="history.php">
             <img src="img/earth.png" alt="earht" title="history">
             <p>History</p>
           </a>
         </li>
         <li class="menu-icon" style="float:right">
-          <a class="active" href="about.html">
+          <a class="active" href="about.php">
             <img src="img/atomic-energy.png" alt="energy" title="About">
             <p>About</p>
           </a>
