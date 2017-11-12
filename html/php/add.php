@@ -1,5 +1,5 @@
 <?php
-include 'php/connect.php';
+include 'connect.php';
 
 $sensor_SQL = $_GET{'value'};
 
