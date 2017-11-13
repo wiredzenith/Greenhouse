@@ -10,6 +10,7 @@
 	<html lang="en-US">
 
 	<head>
+		<meta http-equiv="refresh" content="600">
 		<link rel="stylesheet" href="css/master.css">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -60,11 +61,11 @@
 						while($row = $result->fetch_assoc())
 						{
 							echo "<td>" . $row['time'] . "</td>";
+							echo "<td>" . $row['value1'] . "</td>";
+							echo "<td>" . $row['value2'] . "</td>";
+							echo "<td>" . $row['value3'] . "</td>";
 						}
 						 ?>
-							<td>17:55</td>
-							<td>20.55</td>
-							<td>67.02</td>
 					</tr>
 				</table>
 			</div>
