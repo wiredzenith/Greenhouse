@@ -6,15 +6,31 @@
 	$sql = "SELECT * FROM sensor ORDER BY id DESC LIMIT 1";
  	$result = $conn->query($sql);
 
-	$time 	= " . $row["time"]. ";
-	$temp 	= " . $row["time"]. ";
-	$hum 		= " . $row["time"]. ";
-	$light 	= " . $row["time"]. ";
-	$soilM 	= " . $row["time"]. ";
+while($row = $result->fetch_assoc()){
+	$time 	=	$row["time"];
+	$temp 	=	$row["value1"];
+	$hum 		= $row["value2"];
+	$light 	= $row["value3"];
+	$soilMValue 	= $row["value4"];
+	// $soilTemp 	= $row["value5"];
+	}
 
+if ($soilMValue <= 100 && $soilMValue >= 0) {
+	$soilMText = "Dry";
+}
+elseif ($soilMValue <= 200 && $soilMValue >= 101) {
+	$soilMText = "Wet";
+}
+elseif ($soilMValue <= 300 && $soilMValue >= 201) {
+	$soilMText = "Very wet";
+}
+else {
+	$soilMText = "N/A";
+}
 
  ?>
 <!-- phpconnect and call for data from DB -->
+
 
 <html lang="en-US">
 
@@ -104,19 +120,19 @@ start of first table (readings)
 				<div id="readings-table-body">
 					<div class="readings-table-row">
 						<div class="readings-body-cell">
-							Cell 1–1
+							<?php echo "$time"; ?>
 						</div>
 						<div class="readings-body-cell">
-							Cell 1–2
+							<?php echo "$temp"; ?>
 						</div>
 						<div class="readings-body-cell">
-							Cell 1–3
+							<?php echo "$hum"; ?>
 						</div>
 						<div class="readings-body-cell">
-							Cell 1–4
+							<?php echo "$light"; ?>
 						</div>
 						<div class="readings-body-cell">
-							Cell 1–5
+							<?php echo "$soilMText"; ?>
 						</div>
 					</div>
 				</div>
