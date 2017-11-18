@@ -6,14 +6,34 @@
 	$sql = "SELECT * FROM sensor ORDER BY id DESC LIMIT 1";
  	$result = $conn->query($sql);
 
-while($row = $result->fetch_assoc()){
-	$time 	=	$row["time"];
-	$temp 	=	$row["value1"];
-	$hum 		= $row["value2"];
-	$light 	= $row["value3"];
-	$soilMValue 	= $row["value4"];
-	// $soilTemp 	= $row["value5"];
-	}
+	// $sqlMIN = "SELECT MIN(value1,value2) FROM sensor WHERE (time) = CURRENT_DATE()";
+ 	// $resultMIN = $conn->query($sqlMIN);
+	// $sqlMAX = "SELECT MAX(value1,value2) FROM sensor ";
+ 	// $resultMAX = $conn->query($sqlMAX);
+
+	// while($row = $resultMIN->fetch_assoc()){
+	// 	$tempMIN 		=	$row["value1"] . "&deg;C";
+	// 	$humMIN 		= $row["value2"] . " %RH";
+	// 	$lightMIN 	= $row["value3"] . " (Lux)";
+	// 	//$soilMValue 	= $row["value4"];
+	// 	// $soilTemp 	= $row["value5"];
+	// 	}
+		// while($row = $resultMAX->fetch_assoc()){
+		// 	$tempMAX		=	$row["value1"] . "&deg;C";
+		// 	$humMAX 		= $row["value2"] . " %RH";
+		// 	$lightMAX 	= $row["value3"] . " (Lux)";
+			//$soilMValue 	= $row["value4"];
+			// $soilTemp 	= $row["value5"];
+			//}
+
+	while($row = $result->fetch_assoc()){
+		$time 	=	$row["time"];
+		$temp 	=	$row["value1"] . "&deg;C";
+		$hum 		= $row["value2"] . " %RH";
+		$light 	= $row["value3"] . " (Lux)";
+		$soilMValue 	= $row["value4"];
+		// $soilTemp 	= $row["value5"];
+		}
 
 if ($soilMValue <= 100 && $soilMValue >= 0) {
 	$soilMText = "Dry";
@@ -105,13 +125,13 @@ start of first table (readings)
 						Time
 					</div>
 					<div class="readings-header-cell">
-						Temperature(&deg;C)
+						Temperature
 					</div>
 					<div class="readings-header-cell">
-						Humidity (%RH)
+						Humidity
 					</div>
 					<div class="readings-header-cell">
-						Light (Lux)
+						Light
 					</div>
 					<div class="readings-header-cell">
 						Soil Moisture
@@ -141,18 +161,6 @@ start of first table (readings)
 End of first table (readings)
 -->
 
-			<!-- <?php
-						while($row = $result->fetch_assoc())
-						{
-							echo "<td>" . $row['time'] . "</td>";
-							echo "<td>" . $row['value1'] . "</td>";
-							echo "<td>" . $row['value2'] . "</td>";
-							echo "<td>" . $row['value3'] . "</td>";
-							echo "<td>" . $row['value4'] . "</td>";
-							echo "<td>" . $row['value5'] . "</td>";
-						}
-						 ?> -->
-
 			<!--
 End of first table
 -->
@@ -165,7 +173,6 @@ start of second table (MinMax)
 				<div id="MINMAX-table-header">
 					<div class="MINMAX-header-cell">
 						Temp(&deg;C) MIN
-
 					</div>
 					<div class="MINMAX-header-cell">
 						Temp(&deg;C) MAX
@@ -180,7 +187,7 @@ start of second table (MinMax)
 				<div id="MINMAX-table-body">
 					<div class="MINMAX-table-row">
 						<div class="MINMAX-body-cell">
-							Cell 1–1
+							temp
 						</div>
 						<div class="MINMAX-body-cell">
 							Cell 1–2

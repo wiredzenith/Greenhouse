@@ -121,7 +121,7 @@ ul {
   display          : table-header-group;
   background-color : #c2d54a;
   font-size        : 20px;
-  font-size        : 1.5vmax;
+  font-size        : 1.3vmax;
   font-weight      : bold;
   white-space      : nowrap;
 }
