@@ -1,3 +1,7 @@
+//Function for readding from sensors and sending them to MySQL DB
+//
+//Tomasz Klebek
+//2017/11/21
 void sqlAdd()
 {
 sensors_event_t event;

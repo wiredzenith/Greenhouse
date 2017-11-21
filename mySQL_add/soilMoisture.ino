@@ -1,3 +1,9 @@
+//Read in analoge values from soil moisture sensor and convert to
+//ranges for sending to MySQL
+//
+//Tomasz Klebek
+//2017/11/21
+
 void soilMoistureCal()
 {
   //range for values for the soil moisture sensor.
