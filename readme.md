@@ -1,6 +1,6 @@
-# Project Title
+# Data Gathering Greenhouse
 
-One Paragraph of project description goes here
+An environmental monitoring system for greenhouses that displays and graphs recorded data to a web client. useing Arduino, MySQL, PHP, HTML, CSS, Java,.....  
 
 ## Getting Started
 
