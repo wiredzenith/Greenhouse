@@ -38,6 +38,19 @@
       </ul>
     </div>
     <div class="page">
+      <h1 id="aboutMainHeader">
+        About my project
+      </h1>
+      <p class="aboutText">
+      Text discribing my project and what it does, <br>
+      and how it works, including sorces and references.
+    </p>
+      <h2 id="aboutSecondHeader">
+        Another heading for something
+      </h2>
+      <p class="aboutText">
+        Some thext about somthing discribing something
+      </p>
       <p class="basic">
         <img src="img/atomic-energy.png" alt="atomic-energy" style="width:100px;hight:100px">
       </p>
@@ -46,7 +59,7 @@
   <div class="footer">
     <footer>Created by: Tomasz Klebek
       <br>Icons made by
-      <a href="http://www.freepik.com/">freepik</a>from<a href="http://www.flaticon.com">www.flaticon.com</a>
+      <a href="http://www.freepik.com/">freepik </a>from <a href="http://www.flaticon.com">www.flaticon.com</a>
     </footer>
 
   </div>
