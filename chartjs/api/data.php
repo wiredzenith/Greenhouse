@@ -12,7 +12,7 @@ $mysqli = new mysqli($servername, $username, $password, $dbname);
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
-$query = sprintf("SELECT id, value1,value2 FROM sensor ORDER BY id LIMIT 10");
+$query = sprintf("SELECT value1 FROM sensor ORDER BY id ");
 
 $result = $mysqli->query($query);
 
