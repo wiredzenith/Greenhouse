@@ -12,7 +12,7 @@ $mysqli = new mysqli($servername, $username, $password, $dbname);
 if ($mysqli->connect_error) {
     die("Connection failed: " . $mysqli->connect_error);
 }
-$query = "SELECT DATE_FORMAT(time, '%D %b %k:%i'),value1
+$query = "SELECT DATE_FORMAT(time, '%D %b %H:%i'),value1
                   FROM sensor
                   ORDER BY id ";
 
