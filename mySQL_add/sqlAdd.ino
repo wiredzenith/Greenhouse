@@ -6,17 +6,19 @@ tsl.getEvent(&event);
 Serial.println(htu.readTemperature());
 Serial.println(soilMoisture());
 
-String uri = "/project/html/php/add.php?value=";
+String uri = "/php/add.php?value="; //for pi
+//String uri = "/project/html/php/add.php?value="; //for arduino
+  
        uri += String(htu.readTemperature());
        uri += ",";
        uri += String(htu.readHumidity());
        uri += ",";
-       uri += String(htu.readTemperature());
+       uri += String(event.light);
       //  uri += "value4=";
       //  uri += String(htu.readTemperature());
 
 
 
 CiaoData data = Ciao.write(CONNECTOR, SERVER_ADDR, uri);
-delay(10000);
+delay(900000);
 }
