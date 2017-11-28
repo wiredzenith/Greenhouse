@@ -1,5 +1,5 @@
 <?php
-$servername = "localhost";
+$servername = "192.168.1.11";
 $username = "arduino";
 $password = "arduinotest";
 $dbname = "greenhouse";

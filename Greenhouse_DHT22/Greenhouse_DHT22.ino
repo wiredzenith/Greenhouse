@@ -6,6 +6,7 @@
 //thingspeak get request and api key
 //GET https://api.thingspeak.com/update?api_key=KHYRCV4OZ5IC1CWO&field1=0
 
+
 #define CONNECTOR     "rest"
 #define SERVER_ADDR   "api.thingspeak.com"
 #define APIKEY_THINGSPEAK  "KHYRCV4OZ5IC1CWO" //Insert API Key
