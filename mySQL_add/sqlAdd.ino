@@ -12,13 +12,9 @@ tsl.getEvent(&event);
 Serial.println(htu.readTemperature());
 Serial.println(soilMoisture());
 
-<<<<<<< HEAD
-String uri = "/php/add.php?value=";
-=======
 String uri = "/php/add.php?value="; //for pi
 //String uri = "/project/html/php/add.php?value="; //for arduino
-  
->>>>>>> master
+
        uri += String(htu.readTemperature());
        uri += ",";
        uri += String(htu.readHumidity());

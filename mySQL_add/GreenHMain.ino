@@ -1,5 +1,5 @@
 //Data gathering grean house for gathering temperature, humidity,
-//soil soilMoisture soil temperature and light levels and storing those 
+//soil soilMoisture soil temperature and light levels and storing those
 //readdings in a MySQL DB.
 //
 //Tomasz Klebek
