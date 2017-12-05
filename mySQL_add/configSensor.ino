@@ -1,3 +1,8 @@
+//setup for TSL2561 light sensor 
+//
+//adafruit industries, edited by:Tomasz Klebek
+//2017/11/21
+
 void configureSensor(void)
 {
     /* You can also manually set the gain or enable auto-gain support */

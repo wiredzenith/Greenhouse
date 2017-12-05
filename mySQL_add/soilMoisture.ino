@@ -1,4 +1,10 @@
-void soilMoistureCal()
+//Read in analoge values from soil moisture sensor and convert to
+//ranges for sending to MySQL
+//
+//Tomasz Klebek
+//2017/11/21
+
+void soilMoistureCal() //Only for calabration
 {
   //range for values for the soil moisture sensor.
   //min(sensor in air) = 260

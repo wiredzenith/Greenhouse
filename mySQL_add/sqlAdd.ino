@@ -1,3 +1,9 @@
+//Function for readingin values from sensors and sending them to
+//MySQL DB.
+//
+//Tomasz Klebek
+//2017/11/21
+
 void sqlAdd()
 {
 sensors_event_t event;
@@ -8,7 +14,7 @@ Serial.println(soilMoisture());
 
 String uri = "/php/add.php?value="; //for pi
 //String uri = "/project/html/php/add.php?value="; //for arduino
-  
+
        uri += String(htu.readTemperature());
        uri += ",";
        uri += String(htu.readHumidity());
