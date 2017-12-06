@@ -1,30 +1,10 @@
 <!DOCTYPE html>
 <!-- phpconnect and call for data from DB -->
 <?php
-	include 'php/connect.php';
+	include 'api/connect.php';
 
 	$sql = "SELECT * FROM sensor ORDER BY id DESC LIMIT 1";
- 	$result = $conn->query($sql);
-
-	// $sqlMIN = "SELECT MIN(value1,value2) FROM sensor WHERE (time) = CURRENT_DATE()";
- 	// $resultMIN = $conn->query($sqlMIN);
-	// $sqlMAX = "SELECT MAX(value1,value2) FROM sensor ";
- 	// $resultMAX = $conn->query($sqlMAX);
-
-	// while($row = $resultMIN->fetch_assoc()){
-	// 	$tempMIN 		=	$row["value1"] . "&deg;C";
-	// 	$humMIN 		= $row["value2"] . " %RH";
-	// 	$lightMIN 	= $row["value3"] . " (Lux)";
-	// 	//$soilMValue 	= $row["value4"];
-	// 	// $soilTemp 	= $row["value5"];
-	// 	}
-		// while($row = $resultMAX->fetch_assoc()){
-		// 	$tempMAX		=	$row["value1"] . "&deg;C";
-		// 	$humMAX 		= $row["value2"] . " %RH";
-		// 	$lightMAX 	= $row["value3"] . " (Lux)";
-			//$soilMValue 	= $row["value4"];
-			// $soilTemp 	= $row["value5"];
-			//}
+ 	$result = $mysqli->query($sql);
 
 	while($row = $result->fetch_assoc()){
 		$time 	=	$row["time"];

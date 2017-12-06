@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   $.ajax({
-    url: "http://localhost/project/chartjs/api/data.php",
+    url: "http://localhost/project/html/api/data.php",
     type: "GET",
     success: function(data) {
 
