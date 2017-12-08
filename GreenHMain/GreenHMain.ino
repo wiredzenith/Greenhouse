@@ -3,10 +3,12 @@
 //readdings in a MySQL DB.
 //
 //Tomasz Klebek
-//2017/11/21
+//2017/12/08
 
-#include <includes.h>
-#include <defines.h>
+#include "includes.h"
+#include "defines.h"
+
+#define SERVER_ADDR   "192.168.1.4"
 
 unsigned long previousMillis = 0;
 

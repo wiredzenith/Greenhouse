@@ -13,15 +13,17 @@ Serial.println(htu.readTemperature());
 Serial.println(soilMoisture());
 
 String uri = "/php/add.php?value="; //for pi
-//String uri = "/project/html/php/add.php?value="; //for arduino
+//String uri = "/project/html/php/add.php?value="; //for local
 
-       uri += String(htu.readTemperature());
+       uri += String(htu.readTemperature());  //value1
        uri += ",";
-       uri += String(htu.readHumidity());
+       uri += String(htu.readHumidity());     //value2
        uri += ",";
-       uri += String(event.light);
-      //  uri += "value4=";
-      //  uri += String(htu.readTemperature());
+       uri += String(event.light);            //value3
+       uri += ",";
+       uri += String(htu.readTemperature());  //value4
+       uri += ",";
+       uri += String(NULL);  //value5
 
 
 
