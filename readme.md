@@ -2,14 +2,14 @@
 
 An environmental monitoring system for greenhouses that displays and graphs recorded data to a web client. useing Arduino, MySQL, PHP, HTML, CSS, Java,.....  
 
-## Getting Started
+## Outline
 
-These instructions will get you a copy of the project up and running on your local machine for development and testing purposes. See deployment for notes on how to deploy the project on a live system.
+The greenhouse works using MyqSQL database and Arduino to collect and store
+enviromental data such as temperature, humidity, light intensity, soil moisture and soil temperariture. useing the Arduino caio libraries, the Arduino sends a rest requests to the php add.php file that then adds the comma seperated values to a MySQL database. Information from the MySQL is then called back in the form of a JSON file and parsed into javascript from where it is subsequently displayed useing the ChartJS API.
 
 ### Prerequisites
 
-What things you need to install the software and how to install them
-
+For local hosting and testing i uesing WAMPP in wondows, which is a free to download apache server for windows that also comes with PHPMyadmin, making accessing MySQL simple and easy.
 ```
 Give examples
 ```

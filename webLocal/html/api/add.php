@@ -5,11 +5,11 @@ $sensor_SQL = $_GET{'value'};
 
 $sql = "INSERT INTO sensor (value1,value2,value3,value4,value5) VALUES ($sensor_SQL)";
 
-if ($conn->query($sql) === TRUE) {
+if ($mysqli->query($sql) === TRUE) {
     echo "New record created successfully";
 } else {
-    echo "Error: " . $sql . "<br>" . $conn->error;
+    echo "Error: " . $sql . "<br>" . $mysqli->error;
 }
 
-$conn->close();
+$mysqli->close();
 ?>
