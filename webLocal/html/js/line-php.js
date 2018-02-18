@@ -1,7 +1,7 @@
 $(document).ready(function() {
 
   $.ajax({
-    url: "http://localhost/project/html/api/data.php",
+    url: "../api/data.php",
     type: "GET",
     success: function(data) {
 
@@ -41,14 +41,15 @@ let temp = value.filter((_,i) => i % 2 == 1);
         datasets: [{
           label: "Temperature",
           data: temp,
-          backgroundColor: "blue",
-          borderColor: "lightblue",
+          backgroundColor: "darkgreen",
+          borderColor: "lightgreen",
           fill: false,
           lineTension: 0,
-          pointRadius: 5
+          pointRadius: 4
         }]
       };
       var options = {
+        responsive: false,
         title: {
           display: true,
           position: "top",
