@@ -59,7 +59,7 @@
   <div class="footer">
     <footer>Created by: Tomasz Klebek
       <br>Icons made by
-      <a href="http://www.freepik.com/">freepik </a>from <a href="http://www.flaticon.com">www.flaticon.com</a>
+      <a href="http://www.freepik.com/"> freepik</a> from<a href="http://www.flaticon.com"> www.flaticon.com</a>
     </footer>
 
   </div>

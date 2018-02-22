@@ -3,6 +3,7 @@
 
   <head>
     <link rel="stylesheet" href="css/master.css">
+    <script type="text/javascript" src="js/functions.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Data Gahering Greenhouse</title>
@@ -38,6 +39,7 @@
       </ul>
     </div>
     <div class="page">
+      <button type="button" onclick="ledON();">Click Me!</button>
       <p class="basic">
         <img src="img/earth.png" alt="earth" style="width:100px;hight:100px">
       </p>
@@ -46,7 +48,7 @@
   <div class="footer">
     <footer>Created by: Tomasz Klebek
       <br>Icons made by
-      <a href="http://www.freepik.com/">freepik</a>from<a href="http://www.flaticon.com">www.flaticon.com</a>
+      <a href="http://www.freepik.com/"> freepik</a> from<a href="http://www.flaticon.com"> www.flaticon.com</a>
     </footer>
 
   </div>
