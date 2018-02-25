@@ -6,27 +6,24 @@
 
 void sqlAdd()
 {
-sensors_event_t event;
-tsl.getEvent(&event);
+// sensors_event_t event;
+// tsl.getEvent(&event);
 
-Serial.println(htu.readTemperature());
-Serial.println(soilMoisture());
+// Serial.println(htu.readTemperature());
+// Serial.println(soilMoisture());
 
-String uri = "/php/add.php?value="; //for pi
+String uri = "/api/add.php?value="; //for pi
 //String uri = "/project/html/php/add.php?value="; //for local
 
        uri += String(htu.readTemperature());  //value1
        uri += ",";
        uri += String(htu.readHumidity());     //value2
        uri += ",";
-       uri += String(event.light);            //value3
+       uri += String(NULL);            //value3
        uri += ",";
        uri += String(htu.readTemperature());  //value4
        uri += ",";
        uri += String(NULL);  //value5
 
-
-
-CiaoData data = Ciao.write(CONNECTOR, SERVER_ADDR, uri);
-delay(900000);
+       CiaoData data = Ciao.write(CONNECTOR, SERVER_ADDR, uri);
 }
