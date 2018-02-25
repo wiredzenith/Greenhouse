@@ -8,20 +8,38 @@
 #include "includes.h"
 #include "defines.h"
 
-#define SERVER_ADDR   "192.168.1.4"
+#define SERVER_ADDR   "192.168.1.8"
 
 unsigned long previousMillis = 0;
+unsigned long previousMillisWifi = 0;
 
 void setup()
 {
   Ciao.begin();
   Serial.begin(9600);
   configureSensor();
+  Wifi.begin();
 }
 
 void loop()
 {
-  sqlAdd();
-  Serial.println(soilMoisture());
-  delay(200);
+  unsigned long currentMillisWifi = millis();
+  unsigned long currentMillis = millis();
+
+  if (currentMillisWifi - previousMillisWifi >= 100)
+  {
+    previousMillisWifi = currentMillisWifi;
+    wifiFunction(Wifi);
+    analogWrite(10, 255);
+  }
+
+  if (currentMillis - previousMillis >= 10000)
+  {
+    //soilTemp();
+    previousMillis = currentMillis;
+    sqlAdd();
+    analogWrite(9, 255);
+
+  }
+
 }
