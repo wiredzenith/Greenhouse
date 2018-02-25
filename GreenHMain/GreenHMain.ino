@@ -16,9 +16,10 @@ unsigned long previousMillisWifi = 0;
 void setup()
 {
   Ciao.begin();
-  Serial.begin(9600);
-  configureSensor();
   Wifi.begin();
+  Serial.begin(9600);
+  //configureSensor();
+
 }
 
 void loop()

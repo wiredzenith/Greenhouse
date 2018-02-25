@@ -19,7 +19,8 @@ String uri = "/api/add.php?value="; //for pi
        uri += ",";
        uri += String(htu.readHumidity());     //value2
        uri += ",";
-       uri += String(NULL);            //value3
+       //uri += String(event.light);
+       uri += String(NULL);           //value3
        uri += ",";
        uri += String(soilMoisture());  //value4
        uri += ",";
