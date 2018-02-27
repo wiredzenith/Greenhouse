@@ -25,14 +25,6 @@ var temp=[];
     console.log("Value: " + dataValues[i].value1);
   }
 
-<<<<<<< HEAD
-
-=======
-<<<<<<< HEAD
-
-=======
->>>>>>> 38467150e44314897d7689b887feb68ce4db8470
->>>>>>> 0cb80633c20c796287dd1a18ebb979cc8c4113f1
 //let date = value.filter((_,i) => i % 2 == 0);
 //let temp = value.filter((_,i) => i % 2 == 1);
 // console.log("Test"+ dataValues[0].value1);
