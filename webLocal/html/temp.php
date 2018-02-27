@@ -3,6 +3,7 @@
 
   <head>
     <link rel="stylesheet" href="css/master.css">
+    <script type="text/javascript" src="js/line-php.js"></script>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <title>Data Gahering Greenhouse</title>
@@ -40,6 +41,7 @@
     <div class="page">
       <div class="chart-container">
         <canvas id="line-canvas"></canvas>
+        <button type="button" onclick="range();">Click Me!</button>
       </div>
       <script src="js/Chart.min.js"></script>
       <script src="js/jquery.min.js"></script>

@@ -16,7 +16,7 @@ unsigned long previousMillisWifi = 0;
 void setup()
 {
   Ciao.begin();
-  Wifi.begin();
+  //Wifi.begin();
   Serial.begin(9600);
   //configureSensor();
 
@@ -27,12 +27,21 @@ void loop()
   unsigned long currentMillisWifi = millis();
   unsigned long currentMillis = millis();
 
-  if (currentMillisWifi - previousMillisWifi >= 100)
-  {
-    previousMillisWifi = currentMillisWifi;
-    wifiFunction(Wifi);
-    analogWrite(10, 255);
-  }
+  // if (currentMillisWifi - previousMillisWifi >= 100)
+  // {
+  //   previousMillisWifi = currentMillisWifi;
+  //   wifiFunction(Wifi);
+  //   analogWrite(10, 255);
+  // }
+  CiaoData rest = Ciao.read("rest","192.168.1.8");
+
+  String message1 = rest.get(2);
+  String message2 = rest.get(2);
+  String message3 = rest.get(2);
+
+  Serial.println(message1);
+  Serial.println(message2);
+  Serial.println(message3);
 
   if (currentMillis - previousMillis >= 10000)
   {
