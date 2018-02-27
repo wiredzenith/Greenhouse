@@ -7,26 +7,29 @@ $(document).ready(function() {
 
       var dataValues = JSON.parse(data);
 
-      console.log(dataValues);
+      //console.log(dataValues);
 
       var index = 0;
     //  alert(dataValues[index].value1);
 
       //var value = dataValues[index];
 //------------------------------
-var key=[];
-var value=[];
-dataValues.forEach(function(item){
-
-  for(i in item)
+var date=[];
+var temp=[];
+  for(i in dataValues)
   {
-    key.push(i);
-    value.push(item[i]);
+    console.log(i);
+    date.push(dataValues[i].Date);
+    temp.push(dataValues[i].value1);
+    console.log("Date: " + dataValues[i].Date);
+    console.log("Value: " + dataValues[i].value1);
   }
 
-});
-let date = value.filter((_,i) => i % 2 == 0);
-let temp = value.filter((_,i) => i % 2 == 1);
+//let date = value.filter((_,i) => i % 2 == 0);
+//let temp = value.filter((_,i) => i % 2 == 1);
+// console.log("Test"+ dataValues[0].value1);
+// console.log(dataValues[0].Date);
+
 
 
 // console.log(key);

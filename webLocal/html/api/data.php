@@ -13,7 +13,7 @@ header('Content-Type: application/jason');
 //     die("Connection failed: " . $mysqli->connect_error);
 // }
 include 'connect.php';
-$query = "SELECT DATE_FORMAT(time, '%D %b %H:%i'),value1
+$query = "SELECT DATE_FORMAT(time, '%D %b %H:%i') AS Date,value1
                   FROM sensor
                   ORDER BY id ";
 
