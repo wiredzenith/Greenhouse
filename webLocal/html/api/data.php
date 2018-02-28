@@ -2,7 +2,7 @@
 header('Content-Type: application/jason');
 
 include 'connect.php';
-$query = "SELECT DATE_FORMAT(time, '%D %b %H:%i') AS Date,value1
+$query = "SELECT DATE_FORMAT(time, '%D %b %H:%i') AS Date,value1,value2
                   FROM sensor
                   ORDER BY id ";
 
