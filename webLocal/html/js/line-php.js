@@ -51,7 +51,7 @@ $(document).ready(function() {
             fill: false,
             hitRadius: 5,
             lineTension: 1,
-            pointRadius: 2
+            pointRadius: 1
           },
           {
             label: "Humidity",
@@ -61,7 +61,7 @@ $(document).ready(function() {
             fill: false,
             hitRadius: 5,
             lineTension: 1,
-            pointRadius: 2
+            pointRadius: 1
           }
         ]
       };
@@ -87,8 +87,8 @@ $(document).ready(function() {
           }
         },
         zoom: {
-					enabled: true,
-					mode: 'x',
+          enabled: true,
+          mode: 'x',
         }
       };
       var chart = new Chart(ctx, {
