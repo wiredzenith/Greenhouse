@@ -43,8 +43,11 @@
         <canvas id="line-canvas"></canvas>
         <button type="button" onclick="range();">Click Me!</button>
       </div>
+      <script src="js/moment.min.js"></script>
       <script src="js/Chart.min.js"></script>
       <script src="js/jquery.min.js"></script>
+      <script src="js/chartjs-plugin-zoom.js"></script>
+      <script src="js/hammer.js"></script>
       <script src="js/line-php.js"></script>
       <p class="basic">
         <img src="img/rain.png" alt="rain" style="width:100px;hight:100px">
