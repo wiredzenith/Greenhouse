@@ -58,6 +58,8 @@ li a:hover {
   position : -webkit-sticky;
   position : sticky;
   top      : 0;
+  z-index: 900;
+
 }
 
 li.menu-icon img {
@@ -118,6 +120,12 @@ ul {
 }
 
 /* --------------------------landing page title------------------------------ */
+#diagram img{
+  width: 100%;
+  height: 100%;
+  display: block;
+  z-index: 100;
+}
 
 /* -----------------------------Tables-------------------------------------- */
           /*------------------chart canvas------------------*/
