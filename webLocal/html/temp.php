@@ -41,7 +41,9 @@
     <div class="page">
       <div class="chart-container">
         <canvas id="line-canvas"></canvas>
+        <!--
         <button type="button" onclick="range();">Click Me!</button>
+      -->
       </div>
       <script src="js/moment.min.js"></script>
       <script src="js/Chart.min.js"></script>
