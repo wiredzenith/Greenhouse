@@ -1,31 +1,28 @@
 <!DOCTYPE html>
 <!-- phpconnect and call for data from DB -->
 <?php
-	include 'api/connect.php';
+    include 'api/connect.php';
 
-	$sql = "SELECT * FROM sensor ORDER BY id DESC LIMIT 1";
- 	$result = $mysqli->query($sql);
+    $sql = "SELECT * FROM sensor ORDER BY id DESC LIMIT 1";
+    $result = $mysqli->query($sql);
 
-	while($row = $result->fetch_assoc()){
-		$time 	=	$row["time"];
-		$temp 	=	$row["value1"] . "&deg;C";
-		$hum 		= $row["value2"] . " %RH";
-		$light 	= $row["value3"] . " (Lux)";
-		$soilMValue 	= $row["value4"];
-		// $soilTemp 	= $row["value5"];
-		}
+    while ($row = $result->fetch_assoc()) {
+        $time 	=	$row["time"];
+        $temp 	=	$row["value1"] . "&deg;C";
+        $hum 		= $row["value2"] . " %RH";
+        $light 	= $row["value3"] . " (Lux)";
+        $soilMValue 	= $row["value4"];
+        // $soilTemp 	= $row["value5"];
+    }
 
 if ($soilMValue <= 100 && $soilMValue >= 0) {
-	$soilMText = "Dry";
-}
-elseif ($soilMValue <= 200 && $soilMValue >= 101) {
-	$soilMText = "Wet";
-}
-elseif ($soilMValue <= 300 && $soilMValue >= 201) {
-	$soilMText = "Very wet";
-}
-else {
-	$soilMText = "N/A";
+    $soilMText = "Dry";
+} elseif ($soilMValue <= 200 && $soilMValue >= 101) {
+    $soilMText = "Wet";
+} elseif ($soilMValue <= 300 && $soilMValue >= 201) {
+    $soilMText = "Very wet";
+} else {
+    $soilMText = "N/A";
 }
 
  ?>
