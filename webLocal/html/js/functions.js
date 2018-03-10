@@ -1,4 +1,4 @@
-var arduinoIP = "192.168.1.42/arduino/dig";
+// var arduinoIP = "192.168.1.42/arduino/dig";
 
 function ledON()
 {

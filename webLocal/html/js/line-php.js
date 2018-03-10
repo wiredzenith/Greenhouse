@@ -7,12 +7,6 @@ $(document).ready(function() {
 
       var dataValues = JSON.parse(data);
 
-      //console.log(dataValues);
-
-      var index = 0;
-      //  alert(dataValues[index].value1);
-
-      //var value = dataValues[index];
       //------------------------------
       var date = [];
       var temp = [];
@@ -27,17 +21,6 @@ $(document).ready(function() {
         console.log("Value2: " + dataValues[i].value2);
       }
 
-      //let date = value.filter((_,i) => i % 2 == 0);
-      //let temp = value.filter((_,i) => i % 2 == 1);
-      // console.log("Test"+ dataValues[0].value1);
-      // console.log(dataValues[0].Date);
-
-
-
-      // console.log(key);
-      // console.log(value);
-      // console.log(temp);
-      // console.log(date);
       //-----------------------------
       var ctx = $("#line-canvas");
 

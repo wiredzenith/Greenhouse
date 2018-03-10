@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+
 <html lang="en-US">
 
   <head>
@@ -41,10 +42,17 @@
     <div class="page">
       <div class="chart-container">
         <canvas id="line-canvas"></canvas>
-        <!--
-        <button type="button" onclick="range();">Click Me!</button>
-      -->
+        <!-- <form action="api/data.php"> -->
+        <form>
+          <label for="start_date">Start Date: </label>
+        <input type="date" id="start_date" name="start_date">
+        <label for="end_date"> End Date: </label>
+        <input type="date" id="end_date" label="End Date: " name="end_date">
       </div>
+      <div>
+        <input type="submit">
+      </div>
+    </form>
       <script src="js/moment.min.js"></script>
       <script src="js/Chart.min.js"></script>
       <script src="js/jquery.min.js"></script>
