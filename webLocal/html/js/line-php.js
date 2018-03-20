@@ -1,4 +1,3 @@
-var dt = $("#datepicker").datepicker('getDate');
 $(document).ready(function() {
 
   $.ajax({
@@ -21,7 +20,8 @@ $(document).ready(function() {
         //console.log("Date: " + dataValues[i].Date);
         //console.log("Value: " + dataValues[i].value1);
         //console.log("Value2: " + dataValues[i].value2);
-        console.log(dt);
+        var dt = $("#datepicker").datepicker('getDate');
+        console.log("date time: " + dt);
       }
 
       //-----------------------------
@@ -30,7 +30,7 @@ $(document).ready(function() {
       var chartData = {
         labels: date,
         datasets: [{
-            label: dt,
+            label: "Temperature",
             data: temp,
             backgroundColor: "darkgreen",
             borderColor: "lightgreen",
