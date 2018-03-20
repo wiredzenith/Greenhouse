@@ -1,13 +1,36 @@
 <!DOCTYPE html>
+<?php
+  include 'api/connect.php';
+
+  $sql = "SELECT  MIN(DATE_FORMAT(time, '%Y,%m -1,%d')) AS dateMin,
+                  MAX(DATE_FORMAT(time, '%Y,%m -1,%d')) AS dateMax
+          FROM sensor
+          ORDER BY id
+          DESC LIMIT 1";
+
+  $result = $mysqli->query($sql);
+  $row = $result->fetch_assoc();
+
+  $minDate = $row["dateMin"];
+  $maxDate = $row["dateMax"];
+?>
 
 <html lang="en-US">
 
   <head>
-    <link rel="stylesheet" href="css/master.css">
+    <script src="js/moment.min.js"></script>
+    <script src="js/Chart.min.js"></script>
+    <script src="js/jquery.min.js"></script>
+    <script src="js/jquery-ui.js"></script>
+    <script src="js/chartjs-plugin-zoom.js"></script>
     <script type="text/javascript" src="js/line-php.js"></script>
+    <script src="js/hammer.js"></script>
+    <script src="js/line-php.js"></script>
+    <link rel="stylesheet" href="css/master.css">
+    <link rel="stylesheet" href="css/jquery-ui.css">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Data Gahering Greenhouse</title>
+    <title>Data Gahering Greenhouse <?php echo $minDate ?></title>
   </head>
 
   <body>
@@ -42,45 +65,27 @@
     <div class="page">
       <div class="chart-container">
         <canvas id="line-canvas"></canvas>
-        <!-- <form action="api/data.php"> -->
-        <!-- <form name="Date" method="GET">
-          <label for="start_date">Start Date: </label>
-          <input type="date" id="start_date" name="start_date">
-          <label for="end_date"> End Date: </label>
-          <input type="date" id="end_date" label="End Date: " name="end_date">
-      <div>
-        <input type="submit">
-      </div>
-      </form> -->
-      <form method="post">
+      <form method="GET">
         <div class="form-group"> <!-- Date input -->
-          <label class="control-label" for="date">Date</label>
-          <input class="form-control" id="date" name="date" placeholder="DD/MM/YYY" type="text"/>
+          <label class="control-label" for="date">Date: </label>
+          <input class="form-control" id="datepicker" name="date" placeholder="DD/MM/YYY" type="text"/>
         </div>
         <div class="form-group"> <!-- Submit button -->
-          <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+          <button class="btn-primary" type="submit">Submit</button>
         </div>
        </form>
-       <script>
-    $(document).ready(function(){
-      var date_input=$('input[name="date"]'); //our date input has the name "date"
-      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
-      var options={
-        format: 'dd/mm/yyyy',
-        container: container,
-        todayHighlight: true,
-        autoclose: true,
-      };
-      date_input.datepicker(options);
-    })
+       <script> //jquery-ui script for date picker
+       $( function(){
+       $( "#datepicker" ).datepicker({
+         dateFormat : 'dd/mm/yy',
+         maxDate: new Date (<?php echo $maxDate ?>),
+         minDate:  new Date (<?php echo $minDate ?>),
+         showButtonPanel: true,
+         showAnim: "explode"
+          });
+     });
+
 </script>
-      <script src="js/moment.min.js"></script>
-      <script src="js/Chart.min.js"></script>
-      <script src="js/jquery.min.js"></script>
-      <script src="js/jquery-ui.js"></script>
-      <script src="js/chartjs-plugin-zoom.js"></script>
-      <script src="js/hammer.js"></script>
-      <script src="js/line-php.js"></script>
       <p class="basic">
         <img src="img/rain.png" alt="rain" style="width:100px;hight:100px">
       </p>

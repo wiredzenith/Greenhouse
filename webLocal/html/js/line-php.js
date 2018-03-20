@@ -1,3 +1,4 @@
+var dt = $("#datepicker").datepicker('getDate');
 $(document).ready(function() {
 
   $.ajax({
@@ -8,7 +9,6 @@ $(document).ready(function() {
       var dataValues = JSON.parse(data);
 
       //------------------------------
-      var currentDate = $( "#datepicker" ).datepicker( "getDate" );
 
       var date = [];
       var temp = [];
@@ -21,7 +21,7 @@ $(document).ready(function() {
         //console.log("Date: " + dataValues[i].Date);
         //console.log("Value: " + dataValues[i].value1);
         //console.log("Value2: " + dataValues[i].value2);
-        console.log(currentDate);
+        console.log(dt);
       }
 
       //-----------------------------
@@ -30,7 +30,7 @@ $(document).ready(function() {
       var chartData = {
         labels: date,
         datasets: [{
-            label: "Temperature",
+            label: dt,
             data: temp,
             backgroundColor: "darkgreen",
             borderColor: "lightgreen",
@@ -52,7 +52,7 @@ $(document).ready(function() {
         ]
       };
       var options = {
-        responsive: true,
+        responsive: false,
         title: {
           display: false,
           position: "top",
