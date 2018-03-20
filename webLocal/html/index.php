@@ -3,8 +3,12 @@
 <?php
     include 'api/connect.php';
 
-    $sql = "SELECT * FROM sensor ORDER BY id DESC LIMIT 1";
+    $sql = "SELECT *
+            FROM sensor
+            ORDER BY id
+            DESC LIMIT 1";
     $result = $mysqli->query($sql);
+
 
     while ($row = $result->fetch_assoc()) {
         $time 	=	$row["time"];
@@ -13,6 +17,33 @@
         $light 	= $row["value3"] . " (Lux)";
         $soilMValue 	= $row["value4"];
         // $soilTemp 	= $row["value5"];
+        $min = $row["MIN(value1)"];
+    }
+
+    $sql = "SELECT  ROUND((MIN(value1)),2) as minTemp, ROUND((MAX(value1)),2) as maxTemp,
+                    ROUND((MIN(value2)),2) as minHum, ROUND((MAX(value2)),2) as maxHum,CURDATE()
+            FROM sensor
+            WHERE DATE(time) = CURDATE()
+            ORDER BY id
+            DESC LIMIT 1";
+    $result = $mysqli->query($sql);
+    $row = $result->fetch_assoc();
+
+if(isset($row["minTemp"]))
+    {
+    $minT = $row["minTemp"] . "&deg;C";
+    $maxT = $row["maxTemp"] . "&deg;C";
+    $minH = $row["minHum"] . " %RH";
+    $maxH = $row["maxHum"] . " %RH";
+    $curDate = $row["CURDATE()"] ;
+
+    }
+    else
+    {
+      $minT = "N/A";
+      $maxT = "N/A";
+      $minH = "N/A";
+      $maxH = "N/A";
     }
 
 if ($soilMValue <= 100 && $soilMValue >= 0) {
@@ -24,7 +55,6 @@ if ($soilMValue <= 100 && $soilMValue >= 0) {
 } else {
     $soilMText = "N/A";
 }
-
  ?>
 <!-- phpconnect and call for data from DB -->
 
@@ -146,7 +176,9 @@ End of first table
 start of second table (MinMax)
 -->
 			<div id="MINMAX-table">
-				<div id="MINMAX-table-caption">Min & Max</div>
+				<div id="MINMAX-table-caption">Min & Max
+          <br> <h6 style = "margin: 0;"><?php echo ($curDate) ?></h6>
+        </div>
 				<div id="MINMAX-table-header">
 					<div class="MINMAX-header-cell">
 						Temp(&deg;C) MIN
@@ -164,16 +196,16 @@ start of second table (MinMax)
 				<div id="MINMAX-table-body">
 					<div class="MINMAX-table-row">
 						<div class="MINMAX-body-cell">
-							temp
+							<?php echo "$minT"; ?>
 						</div>
 						<div class="MINMAX-body-cell">
-							Cell 1–2
+							<?php echo "$maxT"; ?>
 						</div>
 						<div class="MINMAX-body-cell">
-							Cell 1–3
+							<?php echo "$minH"; ?>
 						</div>
 						<div class="MINMAX-body-cell">
-							Cell 1–4
+							<?php echo "$maxH"; ?>
 						</div>
 					</div>
 				</div>

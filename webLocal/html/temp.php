@@ -43,19 +43,41 @@
       <div class="chart-container">
         <canvas id="line-canvas"></canvas>
         <!-- <form action="api/data.php"> -->
-        <form>
+        <!-- <form name="Date" method="GET">
           <label for="start_date">Start Date: </label>
-        <input type="date" id="start_date" name="start_date">
-        <label for="end_date"> End Date: </label>
-        <input type="date" id="end_date" label="End Date: " name="end_date">
-      </div>
+          <input type="date" id="start_date" name="start_date">
+          <label for="end_date"> End Date: </label>
+          <input type="date" id="end_date" label="End Date: " name="end_date">
       <div>
         <input type="submit">
       </div>
-    </form>
+      </form> -->
+      <form method="post">
+        <div class="form-group"> <!-- Date input -->
+          <label class="control-label" for="date">Date</label>
+          <input class="form-control" id="date" name="date" placeholder="DD/MM/YYY" type="text"/>
+        </div>
+        <div class="form-group"> <!-- Submit button -->
+          <button class="btn btn-primary " name="submit" type="submit">Submit</button>
+        </div>
+       </form>
+       <script>
+    $(document).ready(function(){
+      var date_input=$('input[name="date"]'); //our date input has the name "date"
+      var container=$('.bootstrap-iso form').length>0 ? $('.bootstrap-iso form').parent() : "body";
+      var options={
+        format: 'dd/mm/yyyy',
+        container: container,
+        todayHighlight: true,
+        autoclose: true,
+      };
+      date_input.datepicker(options);
+    })
+</script>
       <script src="js/moment.min.js"></script>
       <script src="js/Chart.min.js"></script>
       <script src="js/jquery.min.js"></script>
+      <script src="js/jquery-ui.js"></script>
       <script src="js/chartjs-plugin-zoom.js"></script>
       <script src="js/hammer.js"></script>
       <script src="js/line-php.js"></script>

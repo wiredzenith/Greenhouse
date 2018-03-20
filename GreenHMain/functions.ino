@@ -122,12 +122,12 @@ void sqlAdd()
         Serial.println(v2);
         delay(500);
 
-        sensors_event_t event;
-        tsl.getEvent(&event);
-        v3 = event.light;
-        Serial.print("LUX:");
-        Serial.println(v3);
-        delay(500);
+        // sensors_event_t event;
+        // tsl.getEvent(&event);
+        // v3 = event.light;
+        // Serial.print("LUX:");
+        // Serial.println(v3);
+        // delay(500);
 
         v4 = soilMoisture();
         Serial.print("Soil moisture:");

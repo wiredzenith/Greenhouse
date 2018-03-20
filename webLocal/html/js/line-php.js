@@ -8,17 +8,20 @@ $(document).ready(function() {
       var dataValues = JSON.parse(data);
 
       //------------------------------
+      var currentDate = $( "#datepicker" ).datepicker( "getDate" );
+
       var date = [];
       var temp = [];
       var hum = [];
       for (i in dataValues) {
-        console.log(i);
+        //console.log(i);
         date.push(dataValues[i].Date);
         temp.push(dataValues[i].value1);
         hum.push(dataValues[i].value2);
-        console.log("Date: " + dataValues[i].Date);
-        console.log("Value: " + dataValues[i].value1);
-        console.log("Value2: " + dataValues[i].value2);
+        //console.log("Date: " + dataValues[i].Date);
+        //console.log("Value: " + dataValues[i].value1);
+        //console.log("Value2: " + dataValues[i].value2);
+        console.log(currentDate);
       }
 
       //-----------------------------
