@@ -19,7 +19,6 @@
 <html lang="en-US">
 
   <head>
-    <script src="js/jquery-ui.multidatespicker"></script>
     <script src="js/Chart.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.js"></script>
@@ -69,35 +68,42 @@
       </ul>
     </div>
     <div class="page">
+      <div class="form-group"> <!-- Date input -->
+        <form method="GET">
+        <label class="control-label" for="date">Date: </label>
+        <input style="width:70px" class="form-control" id="sDate" name="start_date" placeholder="Start Date" type="text"/>
+        -   <input style="width:70px" class="form-control" id="eDate" name="end_date" placeholder="End Date" type="text"/>
+        <button id="btn" type="submit">Submit</button>
+     </form>
+     </div>
       <div class="chart-container">
         <canvas id="line-canvas"></canvas>
-      <form method="GET">
-        <div class="form-group"> <!-- Date input -->
-          <label class="control-label" for="date">Date: </label>
-          <input class="form-control" id="datepicker" name="end_date" placeholder="DD/MM/YYY" type="text"/>
-        </div>
-        <div class="form-group"> <!-- Submit button -->
-          <button class="btn-primary" type="submit">Submit</button>
-        </div>
-       </form>
+      </div>
        <script> //jquery-ui script for date $()
        $( function(){
-       $( "#datepicker" ).datepicker({
+       $( "#sDate" ).datepicker(
+       {
          dateFormat : 'yy/mm/dd',
          maxDate: new Date (<?php echo $maxDate ?>),
          minDate:  new Date (<?php echo $minDate ?>),
-         showButtonPanel: true,
+         showButtonPanel: false,
          showAnim: "explode"
           });
+          $( "#eDate" ).datepicker(
+          {
+            dateFormat : 'yy/mm/dd',
+            maxDate: new Date (<?php echo $maxDate ?>),
+            minDate:  new Date (<?php echo $minDate ?>),
+            showButtonPanel: false,
+            showAnim: "explode"
+             });
      });
 
 </script>
-
-
       <p class="basic">
         <img src="img/rain.png" alt="rain" style="width:100px;hight:100px">
       </p>
-    </div>
+
   </div>
   <div class="footer">
     <footer>Created by: Tomasz Klebek
