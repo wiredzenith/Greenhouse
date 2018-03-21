@@ -15,10 +15,11 @@
   $maxDate = $row["dateMax"];
 ?>
 
+
 <html lang="en-US">
 
   <head>
-    <script src="js/moment.min.js"></script>
+    <script src="js/jquery-ui.multidatespicker"></script>
     <script src="js/Chart.min.js"></script>
     <script src="js/jquery.min.js"></script>
     <script src="js/jquery-ui.js"></script>
@@ -34,6 +35,11 @@
   </head>
 
   <body>
+    <script> $("#submit").submit(function( event ) {
+    alert( "Handler for .submit() called." );
+    event.preventDefault();
+    });
+    </script>
     <div class="menubar">
       <ul class="menu">
         <li class="menu-icon">
@@ -68,16 +74,16 @@
       <form method="GET">
         <div class="form-group"> <!-- Date input -->
           <label class="control-label" for="date">Date: </label>
-          <input class="form-control" id="datepicker" name="date" placeholder="DD/MM/YYY" type="text"/>
+          <input class="form-control" id="datepicker" name="end_date" placeholder="DD/MM/YYY" type="text"/>
         </div>
         <div class="form-group"> <!-- Submit button -->
           <button class="btn-primary" type="submit">Submit</button>
         </div>
        </form>
-       <script> //jquery-ui script for date picker
+       <script> //jquery-ui script for date $()
        $( function(){
        $( "#datepicker" ).datepicker({
-         dateFormat : 'dd/mm/yy',
+         dateFormat : 'yy/mm/dd',
          maxDate: new Date (<?php echo $maxDate ?>),
          minDate:  new Date (<?php echo $minDate ?>),
          showButtonPanel: true,
@@ -86,6 +92,8 @@
      });
 
 </script>
+
+
       <p class="basic">
         <img src="img/rain.png" alt="rain" style="width:100px;hight:100px">
       </p>

@@ -16,7 +16,7 @@ if(!isset($_GET['end_date']))
   $end_date = '2017/12/11 23:59';
 }
 else {
-  $end_date = $_GET['end_date'];
+  $end_date = $_GET['end_date'] . ' 23:59:59';
 }
 
 $query = "SELECT DATE_FORMAT(time, '%D %b %Y %H:%i') AS Date,value1,value2
