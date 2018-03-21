@@ -75,6 +75,9 @@
         -   <input style="width:70px" class="form-control" id="eDate" name="end_date" placeholder="End Date" type="text"/>
         <button id="btn" type="submit">Submit</button>
      </form>
+     <form method="GET" action="">
+       <button id="btn" type="submit">Reset</button>
+     </form>
      </div>
       <div class="chart-container">
         <canvas id="line-canvas"></canvas>
