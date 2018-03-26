@@ -1,7 +1,7 @@
 #include "header.h"
 
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
-Adafruit_TSL2561_Unified tsl = Adafruit_TSL2561_Unified(TSL2561_ADDR_FLOAT, 666);
+Adafruit_TSL2561_Unified tsl = Adafruit_TSL2561_Unified(TSL2561_ADDR_LOW, 666);
 
 void wifiFunction(WifiData client)
 {
@@ -68,9 +68,9 @@ void configureSensor(void)
    -----------------------------------------------------*/
 
         /* You can also manually set the gain or enable auto-gain support */
-        // tsl.setGain(TSL2561_GAIN_1X);      /* No gain ... use in bright light to avoid sensor saturation */
+        tsl.setGain(TSL2561_GAIN_1X);      /* No gain ... use in bright light to avoid sensor saturation */
         // tsl.setGain(TSL2561_GAIN_16X);     /* 16x gain ... use in low light to boost sensitivity */
-        tsl.enableAutoRange(true);      /* Auto-gain ... switches automatically between 1x and 16x */
+        //tsl.enableAutoRange(true);      /* Auto-gain ... switches automatically between 1x and 16x */
 
         /* Changing the integration time gives you better sensor resolution (402ms = 16-bit data) */
         // tsl.setIntegrationTime(TSL2561_INTEGRATIONTIME_13MS);      /* fast but low resolution */
@@ -79,7 +79,7 @@ void configureSensor(void)
 
         /* Update these values depending on what you've set above! */
         Serial.println("-----------------TSL2561-----------");
-        Serial.print  ("Gain:         "); Serial.println("Auto");
+        Serial.print  ("Gain:         "); Serial.println("1X");
         Serial.print  ("Timing:       "); Serial.println("101 ms");
         Serial.println("------------------------------------");
 }
@@ -87,9 +87,9 @@ void configureSensor(void)
 
 
 
-// Data wire is plugged into pin 7 on the Arduino
-
-// Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
+// //Data wire is plugged into pin 7 on the Arduino
+//
+// //Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
 // OneWire oneWire(ONE_WIRE_BUS);
 // // Pass our oneWire reference to Dallas Temperature.
 // DallasTemperature sensors(&oneWire);
@@ -109,6 +109,10 @@ void sqlAdd()
 {
 
         float v1=0,v2=0,v3=0,v4=0,v5=0;
+        uint16_t broadband = 0;
+        uint16_t infrared = 0;
+        /* Populate broadband and infrared with the latest values */
+        tsl.getLuminosity (&broadband, &infrared);
 
 
 
@@ -125,9 +129,11 @@ void sqlAdd()
         // sensors_event_t event;
         // tsl.getEvent(&event);
         // v3 = event.light;
-        // Serial.print("LUX:");
-        // Serial.println(v3);
-        // delay(500);
+        v3 = broadband;
+        Serial.print("LUX:");
+        Serial.println(v3);
+        Serial.println(infrared);
+        delay(500);
 
         v4 = soilMoisture();
         Serial.print("Soil moisture:");
@@ -152,6 +158,7 @@ void sqlAdd()
         uri += String(v5); //value5
 
         Serial.println(uri);
+
 
         CiaoData data = Ciao.write(CONNECTOR, SERVER_ADDR, uri);
 }
