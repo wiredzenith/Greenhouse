@@ -3,7 +3,7 @@ header('Content-Type: application/jason');
 
 include 'connect.php';
 
-if(($_GET['start_date']) === NULL)
+if(($_GET['start_date']) === "" or !isset($_GET['start_date']))
 {
   $start_date = '1900/01/01';
 }
@@ -11,7 +11,7 @@ else {
   $start_date = $_GET['start_date'];
 }
 
-if(($_GET['end_date']) === NULL)
+if(($_GET['end_date']) === "" or !isset($_GET['end_date']))
 {
   $end_date = '2017/12/11 23:59';
 }

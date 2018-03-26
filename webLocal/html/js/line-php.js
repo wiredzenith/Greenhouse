@@ -72,10 +72,6 @@ console.log(current);
             top: 20,
             bottom: 20
           }
-        },
-        zoom: {
-          enabled: true,
-          mode: 'x',
         }
       };
       var chart = new Chart(ctx, {
