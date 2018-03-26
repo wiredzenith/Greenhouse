@@ -19,7 +19,7 @@ else {
   $end_date = $_GET['end_date'] . ' 23:59:59';
 }
 
-$query = "SELECT DATE_FORMAT(time, '%D %b %Y %H:%i') AS Date,value1,value2
+$query = "SELECT  DATE_FORMAT(time, '%D %b %Y %H:%i') AS Date,value1,value2
                   FROM sensor
                   WHERE time BETWEEN '$start_date' AND '$end_date'
                   ORDER BY id ";
