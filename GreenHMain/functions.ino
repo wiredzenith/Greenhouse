@@ -3,38 +3,8 @@
 Adafruit_HTU21DF htu = Adafruit_HTU21DF();
 Adafruit_TSL2561_Unified tsl = Adafruit_TSL2561_Unified(TSL2561_ADDR_LOW, 666);
 
-void wifiFunction(WifiData client)
-{
-        String wifiString = client.readStringUntil('/');
-        if (wifiString == "analog") {
-                analogString(client);
-        }
-}
-
-void analogString(WifiData client)
-{
-        int pin,value;
-
-        pin = client.parseInt();
-
-        if (client.read() == '/')
-        {
-                value = client.parseInt();
-
-                analogWrite(pin, value);
-
-                client.println("HTTP/1.1 200 OK\n");
-                client.println("Testing Hu?");
-                client.print(EOL);
-        }
-}
-
 //Read in analoge values from soil moisture sensor and convert to
 //ranges for sending to MySQL
-//
-//Tomasz Klebek
-//2017/11/21
-
 void soilMoistureCal() //Only for calabration
 {
         //range for values for the soil moisture sensor.
@@ -51,8 +21,6 @@ int soilMoisture()
         int soilMoisture = analogRead(0);
         soilMoisture = map (soilMoisture,530,260,0,300);
         soilMoisture = constrain(soilMoisture,0,300);
-        // Serial.println("Soil Moisture");
-        // Serial.print(soilMoisture);
         return soilMoisture;
 }
 
@@ -84,37 +52,13 @@ void configureSensor(void)
         Serial.println("------------------------------------");
 }
 
-
-
-
-// //Data wire is plugged into pin 7 on the Arduino
-//
-// //Setup a oneWire instance to communicate with any OneWire devices (not just Maxim/Dallas temperature ICs)
-// OneWire oneWire(ONE_WIRE_BUS);
-// // Pass our oneWire reference to Dallas Temperature.
-// DallasTemperature sensors(&oneWire);
-//
-// float soilTemp()
-// {
-//         // Send the command to get temperatures
-//         sensors.begin();
-//         sensors.requestTemperatures();
-//         // Serial.print("Soil Temperature: ");
-//         // Serial.println(sensors.getTempCByIndex(0)); // Why "byIndex"? You can have more than one IC on the same bus. 0 refers to the first IC on the wire
-//
-//         return(sensors.getTempCByIndex(0));
-// }
-
 void sqlAdd()
 {
-
         float v1=0,v2=0,v3=0,v4=0,v5=0;
         uint16_t broadband = 0;
         uint16_t infrared = 0;
         /* Populate broadband and infrared with the latest values */
         tsl.getLuminosity (&broadband, &infrared);
-
-
 
         v1 = htu.readTemperature();
         Serial.print("Temp:");
@@ -140,25 +84,19 @@ void sqlAdd()
         Serial.println(v4);
         delay(500);
 
-        // v5 = soilTemp();
-        // Serial.print("Soil temp:");
-        // Serial.println(v5);
-        // delay(10000);
-
         String uri = "/api/add.php?value=";
 
-        uri += String(v1); //value1
+        uri += String(v1); //Temperature
         uri += ",";
-        uri += String(v2); //value2
+        uri += String(v2); //Humidity
         uri += ",";
-        uri += String(v3);
+        uri += String(v3);  //Light Level
         uri += ",";
-        uri += String(v4); //value4
+        uri += String(v4); //Soil moisture
         uri += ",";
         uri += String(v5); //value5
 
         Serial.println(uri);
-
 
         CiaoData data = Ciao.write(CONNECTOR, SERVER_ADDR, uri);
 }

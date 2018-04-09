@@ -3,11 +3,7 @@
 #include <Wire.h>
 #include <UnoWiFiDevEd.h>
 #include <Adafruit_HTU21DF.h>
-// #include <OneWire.h>
-// #include <DallasTemperature.h>
-// #include <pgmspace.h>
 
 #define CONNECTOR      "rest"
-#define SERVER_ADDR    "192.168.1.9"
-
-//#define ONE_WIRE_BUS 7
+//#define SERVER_ADDR    "192.168.1.9" //laptop
+#define SERVER_ADDR    "192.168.1.11" //pi
