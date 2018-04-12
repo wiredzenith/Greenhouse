@@ -5,7 +5,7 @@ include 'connect.php';
 
 if(($_GET['start_date']) === "" or !isset($_GET['start_date']))
 {
-  $start_date = '1900/01/01';
+  $start_date = '1970/01/01';
 }
 else {
   $start_date = $_GET['start_date'];
@@ -13,7 +13,7 @@ else {
 
 if(($_GET['end_date']) === "" or !isset($_GET['end_date']))
 {
-  $end_date = '2017/12/11 23:59';
+  $end_date = '2038/01/19 23:59';
 }
 else {
   $end_date = $_GET['end_date'] . ' 23:59:59';

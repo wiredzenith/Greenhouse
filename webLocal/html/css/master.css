@@ -18,25 +18,41 @@ div.form-group {
   padding-left : 50px;
 }
 
-/* -------------------------------Text------------------------------------ */
+
+
+
+
+
+/* -------------------------------About------------------------------------ */
+#page-about{
+  text-align: center;
+  margin         : 0 auto;
+  padding        : 0% 10% 0% 10%;
+  padding-bottom : auto;
+  overflow-x     : auto;
+  background     : #EAEDF2;
+  font-family : sans-serif;
+}
 
 #aboutMainHeader {
-  text-align  : left;
+  text-align  : center;
   text-shadow : 1px 1px #8f9091;
   font-family : sans-serif;
   font-size   : 20pt;
 }
 
 #aboutSecondHeader {
-  text-align  : left;
+  text-align  : center;
   text-shadow : 1px 1px #8f9091;
   font-family : sans-serif;
   font-size   : 15pt;
 }
 
-.aboutText {
-  text-align  : left;
-  font-family : sans-serif;
+#diagram{
+  display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
 }
 
 /* -----------------------------Menu Bar------------------------------------ */
@@ -45,13 +61,14 @@ li {
   display     : inline;
   float       : left;
   font-family : sans-serif;
+    text-align      : center;
 }
 
 li a {
   display         : block;
   padding         : 13px 16px;
   color           : #FFF;
-  text-align      : center;
+
   text-decoration : none;
 }
 
@@ -72,7 +89,7 @@ li.menu-icon img {
 }
 
 li.menu-icon p {
-  width       : 40px;
+  /* width       : 40px; */
   margin      : 0;
   padding     : 0 auto;
   padding-top : 10%;
@@ -114,8 +131,9 @@ ul {
 }
 
 #pageIdImg {
-  display    : block;
-  margin-top : 2%;
+  margin: 2%;
+  display: block;
+  text-align: center;
 }
 
 /* --------------------------landing page title------------------------------ */

@@ -67,6 +67,7 @@ start of head. contains mostly house keeping
 
 	<head>
 		<meta http-equiv="refresh" content="600">
+    <link rel="stylesheet" href="css/normalize.css">
 		<link rel="stylesheet" href="css/master.css">
 		<meta charset="UTF-8">
 		<meta name="viewport" content="width=device-width, initial-scale=1">
@@ -81,34 +82,34 @@ start of Body. contains menubar with icons and titles
 --->
 
 	<body>
-		<div class="menubar">
-			<ul class="menu">
-				<li class="menu-icon">
-					<a href="index.php">
-						<img src="img/greenhouse.png" alt="greenhouse" title="Home">
-						<p>Home</p>
-					</a>
-				</li>
-				<li class="menu-icon">
-					<a href="temp.php">
-						<img src="img/rain.png" alt="rain cloud" title="Temp">
-						<p>Temp</p>
-					</a>
-				</li>
-				<li class="menu-icon">
-					<a href="history.php">
-						<img src="img/earth.png" alt="earht" title="history">
-						<p>History</p>
-					</a>
-				</li>
-				<li class="menu-icon" style="float:right">
+    <div class="menubar">
+      <ul class="menu">
+        <li class="menu-icon">
+          <a href="index.php">
+            <img src="img/greenhouse.png" alt="greenhouse" title="Home">
+            <p>Home</p>
+          </a>
+        </li>
+        <li class="menu-icon">
+          <a href="graph.php">
+            <img src="img/rain.png" alt="rain cloud" title="Graph">
+            <p>Graph</p>
+          </a>
+        </li>
+        <li class="menu-icon">
+          <a href="control.php">
+            <img src="img/earth.png" alt="earth" title="Control">
+            <p>Control</p>
+          </a>
+        </li>
+        <li class="menu-icon" style="float:right">
 					<a class="active" href="about.php">
 						<img src="img/atomic-energy.png" alt="energy" title="About">
 						<p>About</p>
-					</a>
-				</li>
-			</ul>
-		</div>
+          </a>
+        </li>
+      </ul>
+    </div>
 
 		<!--
 END of Body. contains menubar with icons and titles
@@ -217,8 +218,9 @@ End of second table
 			<!--
 page indentifier image
 -->
-
-			<img id="pageIdImg" src="img/greenhouse.png" alt="greenhouse" style="width:100px;hight:100px">
+<div id="pageIdImg">
+  <img  src="img/greenhouse.png" alt="greenhouse" style="width:100px;height:100px">
+</div>
 
 			<!--
 page indentifier image

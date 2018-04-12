@@ -19,15 +19,15 @@
           </a>
         </li>
         <li class="menu-icon">
-          <a href="temp.php">
-            <img src="img/rain.png" alt="rain cloud" title="Temp">
-            <p>Temp</p>
+          <a href="graph.php">
+            <img src="img/rain.png" alt="rain cloud" title="Graph">
+            <p>Graph</p>
           </a>
         </li>
         <li class="menu-icon">
-          <a href="history.php">
-            <img src="img/earth.png" alt="earht" title="history">
-            <p>History</p>
+          <a href="control.php">
+            <img src="img/earth.png" alt="earth" title="Control">
+            <p>Control</p>
           </a>
         </li>
         <li class="menu-icon" style="float:right">
@@ -41,8 +41,11 @@
     <div class="page">
       <button type="button" onclick="ledON();">Click Me!</button>
       <p class="basic">
-        <img src="img/earth.png" alt="earth" style="width:100px;hight:100px">
-      </p>
+        some text abotu thinns
+          </p>
+        <div id="pageIdImg">
+        <img src="img/earth.png" alt="earth" style="width:100px;height:100px">
+      </div>
     </div>
   </div>
   <div class="footer">

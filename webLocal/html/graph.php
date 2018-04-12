@@ -48,21 +48,21 @@
           </a>
         </li>
         <li class="menu-icon">
-          <a href="temp.php">
-            <img src="img/rain.png" alt="rain cloud" title="Temp">
-            <p>Temp</p>
+          <a href="graph.php">
+            <img src="img/rain.png" alt="rain cloud" title="Graph">
+            <p>Graph</p>
           </a>
         </li>
         <li class="menu-icon">
-          <a href="history.php">
-            <img src="img/earth.png" alt="earht" title="history">
-            <p>History</p>
+          <a href="control.php">
+            <img src="img/earth.png" alt="earth" title="Control">
+            <p>Control</p>
           </a>
         </li>
         <li class="menu-icon" style="float:right">
-          <a class="active" href="about.php">
-            <img src="img/atomic-energy.png" alt="energy" title="About">
-            <p>About</p>
+					<a class="active" href="about.php">
+						<img src="img/atomic-energy.png" alt="energy" title="About">
+						<p>About</p>
           </a>
         </li>
       </ul>
@@ -71,8 +71,8 @@
       <div class="form-group"> <!-- Date input -->
         <form method="GET">
         <label class="control-label" for="date">Date: </label>
-        <input style="width:70px" class="form-control" id="sDate" name="start_date" placeholder="Start Date" type="text"/>
-        -   <input style="width:70px" class="form-control" id="eDate" name="end_date" placeholder="End Date" type="text"/>
+        <input style="width:70px" class="form-control" id="sDate" name="start_date" placeholder="Start Date" type="text" autocomplete="off"/>
+        -   <input style="width:70px" class="form-control" id="eDate" name="end_date" placeholder="End Date" type="text" autocomplete="off"/>
         <button id="btn" type="submit">Submit</button>
      </form>
      <form method="GET" action="">
@@ -103,9 +103,9 @@
      });
 
 </script>
-      <p class="basic">
-        <img src="img/rain.png" alt="rain" style="width:100px;hight:100px">
-      </p>
+        <div id="pageIdImg">
+        <img src="img/rain.png" alt="rain" style="width:100px;height:100px">
+      </div>
 
   </div>
   <div class="footer">
