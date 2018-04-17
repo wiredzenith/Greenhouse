@@ -297,24 +297,24 @@ ul {
 }
 
 /* -----------------------------Tables-------------------------------------- */
-#controlLight{
-  padding-right: 10%;
-padding-left: 10%;
-    -webkit-box-sizing: content-box;
-    -moz-box-sizing: content-box;
-    box-sizing: content-box;
-    margin: 10px 145px 0 21px;
-    padding: 0 0 172px;
-    border: none;
-    -webkit-border-radius: 5px;
-    border-radius: 5px;
-    font: normal 16px/normal "Times New Roman", Times, serif;
-    color: rgba(0,0,0,0.9);
-    -o-text-overflow: clip;
-    text-overflow: clip;
-    background: #3498db;
 
+#controlLight {
+  -moz-box-sizing       : content-box;
+  -webkit-box-sizing    : content-box;
+  box-sizing            : content-box;
+  margin                : 10px 145px 0 21px;
+  padding               : 0 0 172px;
+  padding-right         : 10%;
+  padding-left          : 10%;
+  color                 : rgba(0,0,0,0.9);
+  border                : none;
+  -webkit-border-radius : 5px;
+  border-radius         : 5px;
+  font                  : normal 16px/normal "Times New Roman",
+                          Times,
+                          serif;
 }
+
 /* -----------------------------Buttons-------------------------------------- */
 
 #btn {
