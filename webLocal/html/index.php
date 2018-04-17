@@ -161,19 +161,19 @@ start of first table (readings)
         <div id="readings-table-body">
           <div class="readings-table-row">
             <div class="readings-body-cell">
-              <?php echo "$time"; ?>
+                <?php echo "$time"; ?>
             </div>
             <div class="readings-body-cell">
-              <?php echo "$temp"; ?>
+                <?php echo "$temp"; ?>
             </div>
             <div class="readings-body-cell">
-              <?php echo "$hum"; ?>
+                <?php echo "$hum"; ?>
             </div>
             <div class="readings-body-cell">
-              <?php echo "$light"; ?>
+                <?php echo "$light"; ?>
             </div>
             <div class="readings-body-cell">
-              <?php echo "$soilMText"; ?>
+                <?php echo "$soilMText"; ?>
             </div>
           </div>
         </div>
@@ -211,16 +211,16 @@ start of second table (MinMax)
         <div id="MINMAX-table-body">
           <div class="MINMAX-table-row">
             <div class="MINMAX-body-cell">
-              <?php echo "$minT"; ?>
+                <?php echo "$minT"; ?>
             </div>
             <div class="MINMAX-body-cell">
-              <?php echo "$maxT"; ?>
+                <?php echo "$maxT"; ?>
             </div>
             <div class="MINMAX-body-cell">
-              <?php echo "$minH"; ?>
+                <?php echo "$minH"; ?>
             </div>
             <div class="MINMAX-body-cell">
-              <?php echo "$maxH"; ?>
+                <?php echo "$maxH"; ?>
             </div>
           </div>
         </div>
