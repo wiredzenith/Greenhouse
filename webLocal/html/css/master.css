@@ -20,14 +20,15 @@ div.form-group {
 
 #myRange {
   -webkit-appearance : none;
-  width              : 100%;
+  width              : 70%;
   height             : 15px;
   opacity            : 0.7;
   border-radius      : 5px;
-  background         : #d3d3d3;
+  background         : #3a383a;
   outline            : none;
+  box-shadow         : 2px 2px 2px 0px;
   -webkit-transition : .2s;
-  transition         : opacity .2s;
+  transition         : opacity .4s;
 }
 
 #myRange::-webkit-slider-thumb {
@@ -114,10 +115,7 @@ li.menu-icon img {
 }
 
 li.menu-icon p {
-  /**
-  * width
-  * : 40px;
-  */
+  /* width : 40px; */
   margin      : 0;
   padding     : 0 auto;
   padding-top : 10%;
@@ -293,21 +291,47 @@ ul {
 
 /* -----------------------------Tables-------------------------------------- */
 
+.controls {
+  display : flow-root;
+  font-family: sans-serif;
+}
+
 #controlLight {
-  -moz-box-sizing       : content-box;
-  -webkit-box-sizing    : content-box;
-  box-sizing            : content-box;
-  margin                : 10px 145px 0 21px;
-  padding               : 0 0 172px;
-  padding-right         : 10%;
-  padding-left          : 10%;
-  color                 : rgba(0,0,0,0.9);
-  border                : none;
-  -webkit-border-radius : 5px;
-  border-radius         : 5px;
-  font                  : normal 16px/normal "Times New Roman",
-                          Times,
-                          serif;
+  width            : 300px;
+  height           : 300px;
+  float            : left;
+  margin           : 10px 45px 5px 40px;
+  border-radius    : 10px;
+  background-color : #83b54133;
+  box-shadow       : 1px 1px 2px 0px;
+  text-align       : center;
+
+}
+
+#controlLight #btn{
+  margin: 0 10px 0 10px;
+}
+
+#controlFan {
+  width            : 300px;
+  height           : 300px;
+  float            : left;
+  margin           : 10px 45px 5px 40px;
+  border-radius    : 10px;
+  background-color : #83b54133;
+  box-shadow       : 1px 1px 2px 0px;
+  text-align       : center;
+}
+
+#controlHeat {
+  width            : 300px;
+  height           : 300px;
+  float            : left;
+  margin           : 10px 45px 5px 40px;
+  border-radius    : 10px;
+  background-color : #83b54133;
+  box-shadow       : 1px 1px 2px 0px;
+  text-align       : center;
 }
 
 /* -----------------------------Buttons-------------------------------------- */

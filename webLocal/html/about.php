@@ -2,6 +2,23 @@
 <html lang="en-US">
 
 <head>
+  <link rel="apple-touch-icon" sizes="57x57" href="img/apple-icon-57x57.png">
+  <link rel="apple-touch-icon" sizes="60x60" href="img/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="img/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="img/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="img/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="img/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="img/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="img/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="img/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192" href="img/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="img/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="img/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="img/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
   <link rel="stylesheet" href="css/master.css">
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
@@ -48,7 +65,7 @@
       collected and uploaded to a web server where they are graphed to show long term impact of ideal growing conditions.
       <p>
       </p>
-      I will use a range of sensors to record the most important environmental conditions. For tempera- ture and humidity I am using an adafruit module which uses I2C, to give accurate readings. To find the level of moisture in the soil I have a soil moisture
+      I will use a range of sensors to record the most important environmental conditions. For temperature and humidity I am using an adafruit module which uses I2C, to give accurate readings. To find the level of moisture in the soil I have a soil moisture
       probe from DFRobot, which will give me simple to read analogue voltages that can then be interpreted to let me know how wet or dry the soil is. Another I2C sensor I will use is an ambient light sensor that will allow me to measure light intensity
       in lux as well as light in the infrared spectrum and the visible light spectrum too, which will let me know if the plants are getting the right kind of light for their stage of development. All of these elements will be controlled and read in by
       the Arduino Uno with Wi-Fi. For programming the Arduino I will use my experience with C/C++, and HTML and CSS for developing the web page.
@@ -68,6 +85,11 @@
       <source src="video/movie.webm" type="video/webm" preload="auto">
       Sorry, your browser doesn't support the video element.
     </video>
+    <div class="aboutMe">
+      <p>
+        <img style="width: 100px: height:120px" src="img/profile.png" alt="profile_picture"
+      </p>
+    </div>
     <div id="pageIdImg">
       <img src="img/atomic-energy.png" alt="atomic-energy" style="width:100px;height:100px">
     </div>
