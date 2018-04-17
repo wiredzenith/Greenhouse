@@ -18,20 +18,46 @@ div.form-group {
   padding-left : 50px;
 }
 
+#myRange {
+  -webkit-appearance : none;
+  width              : 100%;
+  height             : 15px;
+  opacity            : 0.7;
+  border-radius      : 5px;
+  background         : #d3d3d3;
+  outline            : none;
+  -webkit-transition : .2s;
+  transition         : opacity .2s;
+}
 
+#myRange::-webkit-slider-thumb {
+  -webkit-appearance : none;
+  appearance         : none;
+  width              : 25px;
+  height             : 25px;
+  border-radius      : 50%;
+  background         : #4CAF50;
+  cursor             : pointer;
+}
 
-
-
+#myRange::-moz-range-thumb {
+  width         : 25px;
+  height        : 25px;
+  border-radius : 50%;
+  background    : #4CAF50;
+  cursor        : pointer;
+}
 
 /* -------------------------------About------------------------------------ */
-#page-about{
-  text-align: center;
+
+#page-about {
   margin         : 0 auto;
   padding        : 0% 10% 0% 10%;
   padding-bottom : auto;
   overflow-x     : auto;
   background     : #EAEDF2;
-  font-family : sans-serif;
+  text-align     : center;
+  font-family    : sans-serif;
 }
 
 #aboutMainHeader {
@@ -48,11 +74,11 @@ div.form-group {
   font-size   : 15pt;
 }
 
-#diagram{
-  display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: fit-content;
+#diagram {
+  display      : block;
+  width        : fit-content;
+  margin-right : auto;
+  margin-left  : auto;
 }
 
 /* -----------------------------Menu Bar------------------------------------ */
@@ -60,15 +86,14 @@ div.form-group {
 li {
   display     : inline;
   float       : left;
+  text-align  : center;
   font-family : sans-serif;
-    text-align      : center;
 }
 
 li a {
   display         : block;
   padding         : 13px 16px;
   color           : #FFF;
-
   text-decoration : none;
 }
 
@@ -89,7 +114,15 @@ li.menu-icon img {
 }
 
 li.menu-icon p {
-  /* width       : 40px; */
+  /**
+  * width
+  *
+  *
+  *
+  *
+  *
+  * : 40px;
+  */
   margin      : 0;
   padding     : 0 auto;
   padding-top : 10%;
@@ -131,9 +164,9 @@ ul {
 }
 
 #pageIdImg {
-  margin: 2%;
-  display: block;
-  text-align: center;
+  display    : block;
+  margin     : 2%;
+  text-align : center;
 }
 
 /* --------------------------landing page title------------------------------ */
@@ -264,7 +297,24 @@ ul {
 }
 
 /* -----------------------------Tables-------------------------------------- */
+#controlLight{
+  padding-right: 10%;
+padding-left: 10%;
+    -webkit-box-sizing: content-box;
+    -moz-box-sizing: content-box;
+    box-sizing: content-box;
+    margin: 10px 145px 0 21px;
+    padding: 0 0 172px;
+    border: none;
+    -webkit-border-radius: 5px;
+    border-radius: 5px;
+    font: normal 16px/normal "Times New Roman", Times, serif;
+    color: rgba(0,0,0,0.9);
+    -o-text-overflow: clip;
+    text-overflow: clip;
+    background: #3498db;
 
+}
 /* -----------------------------Buttons-------------------------------------- */
 
 #btn {

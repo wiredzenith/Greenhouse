@@ -39,7 +39,28 @@
       </ul>
     </div>
     <div class="page">
-      <button type="button" onclick="ledON();">Click Me!</button>
+      <button id="btn" type="button" onclick="ledON();">ON</button>
+      <button id="btn" type="button" onclick="ledOFF();">OFF</button>
+      <div class="slidecontainer">
+        <input onchange="ledVAL()" type="range" min="0" max="255" value="125" class="slider" id="myRange">
+        <p>Value: <span id="demo"></span></p>
+        <script>
+        var slider = document.getElementById("myRange");
+        var output = document.getElementById("demo");
+        output.innerHTML = slider.value;
+
+        slider.oninput = function() {
+          output.innerHTML = this.value;
+        }
+        </script>
+        <div id="controlLight">
+          <p>
+
+          </p>
+
+        </div>
+    </div>
+
       <p class="basic">
         some text abotu thinns
           </p>
