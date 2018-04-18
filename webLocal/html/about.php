@@ -56,6 +56,11 @@
   </div>
 
   <div id="page-about">
+    <div id="page-links">
+      <a href="#about-me" style="text-decoration:none;"><h4>About Me</h4></a>
+      <p> | </p>
+      <a href="#video" style="text-decoration:none;"><h4>Video</h4></a>
+    </div>
     <h1 id="aboutMainHeader">
         About my project
       </h1>
@@ -79,16 +84,17 @@
         Another heading for something
       </h2>
     <p class="aboutText">
-      Some thext about somthing discribing something
+      Some text about somthing discribing something
     </p>
-    <video width="640" height="480" controls>
+    <video id="video" width="100%" height="auto" controls>
       <source src="video/movie.webm" type="video/webm" preload="auto">
       Sorry, your browser doesn't support the video element.
     </video>
     <div class="aboutMe">
       <p>
-        <img style="width: 100px: height:120px" src="img/profile.png" alt="profile_picture"
+        <img src="img/profile.png" alt="profile_picture">
       </p>
+      <h2 id="about-me">About Me</h2>
     </div>
     <div id="pageIdImg">
       <img src="img/atomic-energy.png" alt="atomic-energy" style="width:100px;height:100px">

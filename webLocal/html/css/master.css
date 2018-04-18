@@ -75,6 +75,11 @@ div.form-group {
   font-size   : 15pt;
 }
 
+div.aboutMe img{
+  width: 200px;
+  height: 200px;
+}
+
 #diagram {
   display      : block;
   width        : fit-content;
@@ -290,6 +295,9 @@ ul {
 }
 
 /* -----------------------------Tables-------------------------------------- */
+#video{
+    max-width: 680px;
+}
 
 .controls {
   display : flow-root;
